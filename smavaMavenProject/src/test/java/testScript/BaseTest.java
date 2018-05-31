@@ -24,29 +24,11 @@ public class BaseTest {
 	protected String SMAVA_URL ="https://www.smava.de";
 	
  
-	public static void fnSelectDropDownvalue(WebDriver driver,Collection<WebElement> aDropdownValues, String aValueRequired)
-	{
-		//Collection<WebElement> dropDownValue =  aDropdownItems; 
-	    Iterator<WebElement> dropDownValueitr = aDropdownValues.iterator();
-	    while(dropDownValueitr.hasNext())
-	    {
-	    	WebElement currentValue = dropDownValueitr.next();
-	    	if(currentValue.getText().contains(aValueRequired))
-	    	{
-	    		currentValue.click();
-	    	}
-	    	else
-	    	{
-	    		
-	    	}
-	    }
-	}
-
-  @BeforeClass
+	@BeforeClass
 	public void fnpreCondition() 
 	{
-		//driver = new FirefoxDriver();
-	  	System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\chromedriver.exe");
+		  //driver = new FirefoxDriver();
+	  	  System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\chromedriver.exe");
 		  ChromeOptions chromeOptions = new ChromeOptions();
 		  chromeOptions.addArguments("--start-maximized");
 		  driver = new ChromeDriver(chromeOptions);
@@ -54,7 +36,7 @@ public class BaseTest {
 		  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 	}	
-  @AfterClass
+  	@AfterClass
 	public void fnpostCondition( )
 	{
 		//driver.close();
